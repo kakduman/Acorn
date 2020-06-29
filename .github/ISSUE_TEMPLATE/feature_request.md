@@ -14,4 +14,4 @@ A clear and concise description of what you want to happen.
 The reasons why you want to see the feature implemented.
 
 **Additional context**
-Add any other context or screenshots about the feature request here. If you're suggesting a plugin, please provide a link to its download page.
+Add any other context or screenshots about the feature request here. If you're suggesting a plugin, please provide a link to its download page. Most users can ignore this section.
