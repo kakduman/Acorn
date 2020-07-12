@@ -1,0 +1,138 @@
+config-version: 12
+settings:
+  log-villager-deaths: true
+  sample-count: 12
+  save-user-cache-on-stop-only: true
+  late-bind: false
+  bungeecord: true
+  sample-counht: 12
+  player-shuffle: 0
+  user-cache-size: 500000
+  moved-wrongly-threshold: 50.1925
+  moved-too-quickly-multiplier: 50.0
+  timeout-time: 550
+  restart-on-crash: true
+  restart-script: ./start.sh
+  netty-threads: 4
+  debug: false
+  attribute:
+    maxHealth:
+      max: 2048.0
+    movementSpeed:
+      max: 2048.0
+    attackDamage:
+      max: 2048.0
+messages:
+  whitelist: The server is under maintenance. Check the discord at discord.gg/CRBQKYA
+    for more information.
+  unknown-command: Unknown command. Type "/warp help" for help.
+  server-full: The server is full! Try again later.
+  outdated-client: Outdated client! Please use {0}
+  outdated-server: Outdated server! I'm still on {0}
+  restart: Server is restarting. This should only take a minute!
+commands:
+  log: true
+  tab-complete: 0
+  send-namespaced: true
+  spam-exclusions:
+  - /skill
+  silent-commandblock-console: false
+  replace-commands:
+  - setblock
+  - summon
+  - testforblock
+  - tellraw
+advancements:
+  disable-saving: false
+  disabled:
+  - minecraft:story/disabled
+stats:
+  disable-saving: false
+  forced-stats: {}
+world-settings:
+  default:
+    end-portal-sound-radius: 0
+    trident-despawn-rate: 18000
+    view-distance: default
+    max-entity-collisions: 1
+    verbose: true
+    mob-spawn-range: 2
+    hopper-amount: 1
+    dragon-death-sound-radius: 0
+    max-tnt-per-tick: 10
+    wither-spawn-sound-radius: 0
+    enable-zombie-pigmen-portal-spawns: true
+    item-despawn-rate: 6000
+    arrow-despawn-rate: 300
+    hanging-tick-frequency: 100
+    zombie-aggressive-towards-villager: false
+    nerf-spawner-mobs: false
+    merge-radius:
+      exp: 6.0
+      item: 4.0
+    growth:
+      bamboo-modifier: 100
+      sweetberry-modifier: 100
+      kelp-modifier: 100
+      cactus-modifier: 100
+      cane-modifier: 100
+      melon-modifier: 100
+      mushroom-modifier: 100
+      pumpkin-modifier: 100
+      sapling-modifier: 100
+      beetroot-modifier: 100
+      carrot-modifier: 100
+      potato-modifier: 100
+      wheat-modifier: 100
+      netherwart-modifier: 100
+      vine-modifier: 100
+      cocoa-modifier: 100
+    entity-activation-range:
+      villagers: 16
+      flying-monsters: 16
+      villagers-work-immunity-after: 100
+      villagers-work-immunity-for: 20
+      villagers-active-for-panic: true
+      water: 6
+      raiders: 16
+      animals: 16
+      monsters: 12
+      misc: 8
+      tick-inactive-villagers: false
+      wake-up-inactive:
+        animals-max-per-tick: 4
+        animals-every: 1200
+        animals-for: 100
+        monsters-max-per-tick: 8
+        monsters-every: 400
+        monsters-for: 100
+        villagers-max-per-tick: 4
+        villagers-every: 600
+        villagers-for: 100
+        flying-monsters-max-per-tick: 8
+        flying-monsters-every: 200
+        flying-monsters-for: 100
+    entity-tracking-range:
+      players: 48
+      animals: 48
+      monsters: 48
+      misc: 32
+      other: 64
+    ticks-per:
+      hopper-transfer: 8
+      hopper-check: 4
+    hunger:
+      jump-walk-exhaustion: 0.05
+      jump-sprint-exhaustion: 0.2
+      combat-exhaustion: 0.1
+      regen-exhaustion: 6.0
+      swim-multiplier: 0.01
+      sprint-multiplier: 0.1
+      other-multiplier: 0.0
+    max-tick-time:
+      tile: 1000
+      entity: 1000
+    squid-spawn-range:
+      min: 45.0
+  worldeditregentempworld:
+    verbose: false

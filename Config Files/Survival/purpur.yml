@@ -1,0 +1,188 @@
+verbose: false
+config-version: 4
+settings:
+  use-alternate-keepalive: false
+  dont-send-useless-entity-packets: false
+  fix-item-position-desync: false
+  lagging-threshold: 19.0
+  tps-catchup: true
+  server-mod-name: Acorn
+  logger:
+    suppress-init-legacy-material-errors: false
+    suppress-ignored-advancement-warnings: false
+  blocks:
+    barrel:
+      six-rows: false
+    ender_chest:
+      six-rows: false
+      use-permissions-for-rows: false
+  timings:
+    url: https://timings.pl3x.net
+  messages:
+    afk-broadcast-away: §e§o%s is now AFK
+    afk-broadcast-back: §e§o%s is no longer AFK
+    ping-command-output: §a%s's ping is %sms
+world-settings:
+  default:
+    mobs:
+      phantom:
+        attacked-by-crystal-range: 0.0
+        attacked-by-crystal-damage: 1.0
+        orbit-crystal-radius: 0.0
+      giant:
+        step-height: 2.0
+        jump-height: 1.0
+        max-health: 100.0
+        movement-speed: 0.5
+        attack-damage: 50.0
+        have-ai: false
+        have-hostile-ai: false
+      husk:
+        jockey:
+          only-babies: true
+          chance: 0.05
+          try-existing-chickens: true
+      illusioner:
+        max-health: 32.0
+        movement-speed: 0.5
+        follow-range: 18.0
+      iron_golem:
+        can-swim: false
+      pig:
+        give-saddle-back: false
+      polar_bear:
+        breedable-item: ''
+      rabbit:
+        spawn-toast-chance: 0.0
+        spawn-killer-rabbit-chance: 0.0
+      snow_golem:
+        drop-pumpkin-when-sheared: false
+        pumpkin-can-be-added-back: false
+      villager:
+        brain-ticks: 4
+        use-brain-ticks-only-when-lagging: true
+        can-be-leashed: false
+        bypass-mob-griefing: true
+        follow-emerald-blocks: false
+        spawn-iron-golem:
+          radius: 0
+          limit: 0
+      wandering_trader:
+        can-be-leashed: false
+        follow-emerald-blocks: false
+      wither_skeleton:
+        takes-wither-damage: false
+      zombie:
+        target-turtle-eggs: true
+        jockey:
+          only-babies: true
+          chance: 0.05
+          try-existing-chickens: true
+      zombie_horse:
+        spawn-chance: 0.0
+      zombified_piglin:
+        jockey:
+          only-babies: true
+          chance: 0.05
+          try-existing-chickens: true
+      zombie_villager:
+        jockey:
+          only-babies: true
+          chance: 0.05
+          try-existing-chickens: true
+      cat:
+        spawn-delay: 1200
+        scan-range-for-other-cats:
+          swamp-hut: 16
+          village: 48
+      chicken:
+        retaliate: false
+      cow:
+        feed-mushrooms-for-mooshroom: 0
+      creeper:
+        allow-griefing: true
+        naturally-charged-chance: 0.0
+      drowned:
+        jockey:
+          only-babies: true
+          chance: 0.05
+          try-existing-chickens: true
+      ender_dragon:
+        always-drop-egg-block: false
+        always-drop-full-exp: false
+        max-health: 200.0
+      enderman:
+        allow-griefing: true
+      fox:
+        tulips-change-type: false
+    gameplay-mechanics:
+      use-better-mending: false
+      disable-drops-on-cramming-death: false
+      entities-pick-up-loot-bypass-mob-griefing: false
+      fix-climbing-bypassing-cramming-rule: false
+      milk-cures-bad-omen: true
+      save-projectiles-to-disk: true
+      trident-loyalty-void-return-height: 0.0
+      void-damage-height: -64.0
+      elytra:
+        damage-per-second: 1
+        damage-multiplied-by-speed: 0.0
+        ignore-unbreaking: false
+        damage-per-boost:
+          firework: 0
+          trident: 0
+      armorstand:
+        step-height: 0.0
+      controllable-minecarts:
+        enabled: false
+        place-anywhere: false
+        step-height: 1.0
+        hop-boost: 0.5
+        base-speed: 0.1
+        block-speed:
+          grass-block: 0.3
+          stone: 0.5
+      item:
+        immune:
+          explosion: []
+          fire: []
+      player:
+        spawn-invulnerable-ticks: 60
+        invulnerable-while-accepting-resource-pack: false
+        idle-timeout:
+          kick-if-idle: true
+          tick-nearby-entities: true
+          count-as-sleeping: false
+          update-tab-list: false
+        exp-dropped-on-death:
+          equation: expLevel * 7
+          maximum: 100
+      boat:
+        eject-players-on-land: false
+      silk-touch:
+        enabled: false
+        tools:
+        - minecraft:iron_pickaxe
+        - minecraft:golden_pickaxe
+        - minecraft:diamond_pickaxe
+        - minecraft:netherite_pickaxe
+    blocks:
+      lava:
+        infinite-source: false
+        speed:
+          nether: 10
+          not-nether: 30
+      bamboo:
+        max-height: 16
+        small-height: 10
+      sign:
+        allow-colors: false
+        right-click-edit: false
+      farmland:
+        gets-moist-from-below: false
+      dispenser:
+        apply-cursed-to-armor-slots: true
+      turtle_egg:
+        break-from-exp-orbs: true
+        break-from-items: true
+        break-from-minecarts: true
