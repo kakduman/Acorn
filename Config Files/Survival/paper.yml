@@ -185,9 +185,9 @@ world-settings:
     alt-item-despawn-rate:
       enabled: true
       items:
-        COBBLESTONE: 300
-        STONE: 300
-        NETHERRACK: 300
+        COBBLESTONE: 400
+        STONE: 400
+        NETHERRACK: 400
     generator-settings:
       flat-bedrock: false
     baby-zombie-movement-modifier: 0.5
@@ -197,7 +197,7 @@ world-settings:
     alt-item-despawn-rate:
       enabled: true
       items:
-        NETHERRACK: 300
+        NETHERRACK: 400
     anti-xray:
       enabled: true
       engine-mode: 1
