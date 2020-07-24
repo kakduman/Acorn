@@ -7,6 +7,7 @@ kits:
       - stonepickaxe 1
       - stoneaxe 1
       - baked_potato 16
+      - /lp user {username} parent addtemp back 24h accumulate
   color:
     delay: 6000
     items:
