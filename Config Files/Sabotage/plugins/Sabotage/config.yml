@@ -1,0 +1,577 @@
+#SABOTATGE CONFIGURATION FILE
+#Sabotage version 1.0.0 by Eagle_Pride
+
+#For support, contact Eagle_Pride on Discord (Eagle #2718)
+
+#All percentages should be in decimal form. Example: (100% = 1, 50% = 0.5)
+
+
+#This is the list of all maps in the current map rotation
+#The name here must match the name of the world folder in /plugins/Sabotage, and will dictate how the maps appear in /vote
+Map-Rotation:
+  - A Casual Town
+  - Bellport
+  - Biome Cube
+  - DeeKay Corridors
+  - Desolate
+  - Embers
+  - Emerald Illusion
+  - Estonia Springs
+  - Floating Isle
+  - Grande Castle
+  - Hijacked
+  - Island
+  - Mesa Wasteland
+  - Modern Paris
+  - Ships
+  - Volcano Massacre
+  - Wasteland
+  - Beachy
+  - Ravine
+  - Fantasy
+  - Old Woodlands
+  - Overgrowth
+  - Redwood Springs
+  - Sabotage Inc
+  - Scribblewood
+  - Swamp
+  - Vengeance of Kulkulkan
+  - Vestige of Xergos
+
+#This is the number of maps players may choose from
+Number-Of-Maps: 27
+
+#This enables players to choose a random map option, where a random map will be selected from the current map rotation
+Random-Map-Option: true
+
+#This is the name of the map that will be used as the lobby.
+#The name here must match the name of the world folder in /plugins/Sabotage
+Lobby-World-Name: nextlobby
+
+#This is the information used to connect to a MySQL database
+#For free hosting, freemysqlhosting.net works
+#All database setup is done by Sabotage
+Database:
+  Username: [redacted]
+  ID: [redacted]
+  Host: [redacted]
+  Password: [redacted]
+  Port: [redacted]
+
+#This controls the initial setup of sabotage
+#When set to true, the next time the plugin is loaded Sabotage will guide you through the initial setup
+#When set to false, Sabotage will not guide you through the initial setup
+Run-Setup: false
+
+#This is the maximum percent of players that become saboteurs
+Min-Pct-Sabs: 0.15
+
+#This is the percent of all chests on a map that spawn in a given chest wave.
+Chest-Spawn-Pct: 0.25
+
+#If set to true, the percent of chests spawned will be the square root of players/30. Some severs prefer this to a fixed percent of chests spawning.
+Use-Relative-Chest-Spawning: true
+
+#When set to true, the server will get player prefixes from a vault-compatible permissions plugin
+#Make sure Vault is installed if this option is set to true
+#When set to false, the server will get player prefixes from the table below
+Use-Vault-Prefixes: true
+
+#This is the list of prefixes the server uses when Use-Vault-Prefixes is set to false
+#When Use-Vault-Prefixes is set to true, this can be ignored
+Prefixes:
+  Player1: "§6[§2OWNER§6]"
+  Player2: "§6[§2MOD§6]"
+
+#This is the length, in seconds, of one game of Sabotage
+Game-Time: 480
+
+#This is the length, in seconds, between chest waves
+Chest-Wave-Time: 180
+
+#This is the length, in seconds, of the wait in the lobby before the game starts, once the minimum three players have joined
+Lobby-Time: 60
+
+#This is how long, in milliseconds, a player should be banned if they drop below 0 karma
+#86400000 milliseconds is one day
+Karma-Ban-Time: 86400000
+
+#This is how powerful the Martyr explosion is
+Martyr-Power: 13
+
+#This is the text that goes on the first line of the sign created when someone dies.
+Death-Sign-Title: "§6[§2RIP§6]"
+
+#This is a list of all the items a player can get when opening a chest
+#All items names must match how they appear on the website https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+#Most of the time, the item's name is just the full name of the item spelled in all capital letters
+#Each item is then followed with the percent chance of receiving that item
+#Make sure all the decimals under the Normal section add up to one, and all the decimals under the Ender section add up to one
+#All potions should be grouped under the potions section
+#Posions follow the same general naming rules as most other items, but must appear exactly how they appear on the website https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html
+Chest-Drops:
+  #These are the chest drops for normal chests
+  Normal:
+    WOODEN_SWORD: 0.34
+    STONE_SWORD: 0.13
+    IRON_SWORD: 0.04
+    BOW: 0.04
+    TNT: 0.05
+    FLINT_AND_STEEL: 0.04
+    ENDER_PEARL: 0.05
+    LEATHER_BOOTS: 0.06
+    LEATHER_CHESTPLATE: 0.05
+    LEATHER_HELMET: 0.06
+    LEATHER_LEGGINGS: 0.05
+    #All potions need to be grouped together
+    Potions:
+      SPEED: 0.03
+      FIRE_RESISTANCE: 0.02
+      INSTANT_HEAL: 0.01
+      JUMP: 0.01
+      REGEN: 0.02
+
+  #These are the chest drops for rarer ender chests
+  Ender:
+    IRON_SWORD: 0.1
+    GOLDEN_SWORD: 0.02
+    ENDER_PEARL: 0.10
+    TNT: 0.15
+    IRON_BOOTS: 0.1
+    IRON_CHESTPLATE: 0.1
+    IRON_HELMET: 0.1
+    IRON_LEGGINGS: 0.1
+    Potions:
+      SPEED: 0.10
+      FIRE_RESISTANCE: 0.03
+      INSTANT_HEAL: 0.02
+      JUMP: 0.02
+      REGEN: 0.06
+
+#This will make all potions that come from ender chests level two instead of level one
+Double-Ender-Chest-Potion-Level: true
+
+#This will make all potions that come from ender chests apply their effects for longer
+Extend-Ender-Chest-Potion-Duration: false
+
+#This is the percentage of normal chests that will be converted into ender chests during each chest wave
+Chest-Enderchest-Upconversion: 0.04
+
+#This is the name of the shears given to the detective that can be used to check bodies and preform insight
+Detective-Shear-Name: "§9Inspectors"
+
+#This enables or disables the option to buy insight
+Insight-Enabled: true
+
+#This enables or disables the option to buy panic kits for the detective
+Detective-Panic-Kit-Enabled: true
+
+#This enables or disables the option to buy a Chorus Fruit for the detective
+Detective-Chorus-Fruit-Enabled: false
+
+#This enables or disables the option to buy a speed II potion for the detective
+Detective-Speed-Enabled: true
+
+#This enables or disables the option to buy Surprise Chests for a saboteur
+Saboteur-Surprise-Chest-Enabled: true
+
+#This enables or disables the option to buy Martyr for a saboteur
+Saboteur-Martyr-Enabled: true
+
+#This enables or disables the option to buy a Panic Kit for a saboteur
+Saboteur-Panic-Kit-Enabled: true
+
+#This enables or disables the option to buy Hack Revelation for a saboteur
+Saboteur-Hack-Revelation-Enabled: true
+
+#This enables or disables the option to buy a Chorus Fruit for an saboteur
+Saboteur-Chorus-Fruit-Enabled: false
+
+#This enables or disables the option to buy a speed II potion for an saboteur
+Saboteur-Speed-Enabled: true
+
+#This enables or disables the option to buy a Panic Kit for an innocent
+Innocent-Panic-Kit-Enabled: true
+
+#This enables or disables the option to buy a Chorus Fruit for an innocent
+Innocent-Chorus-Fruit-Enabled: false
+
+#This enables or disables the option to buy a speed II potion for an innocent
+Innocent-Speed-Enabled: true
+
+#This enabled or disables the option to buy a map for an innocent
+Innocent-Map-Enabled: true
+
+#This enabled or disables the option to buy a map for a detective
+Detective-Map-Enabled: true
+
+#This enabled or disables the option to buy a map for a saboteur
+Saboteur-Map-Enabled: true
+
+#This enabled or disables the option to buy a nuke for the detective
+Detective-Nuke-Enabled: true
+
+#This enabled or disables the option to buy a nuke for a sab
+Saboteur-Nuke-Enabled: true
+
+#This enabled or disables the option to buy a nuke for an innocent
+Innocent-Nuke-Enabled: true
+
+#This enabled or disables the option to buy a player locator for the detective
+Detective-Player-Locator-Enabled: true
+
+#This enabled or disables the option to buy a player locator for a saboteur
+Saboteur-Player-Locator-Enabled: true
+
+#This enabled or disables the option to buy a player locator for an innocent
+Innocent-Player-Locator-Enabled: true
+
+
+#These are the prices of the shop items for saboteurs
+#Regardless of which shop items are enabled, the first price is always the cost of hack revelation,
+#The second is the cost of a surprise chest, the third is the cost of martyr, and the fourth is the cost of a panic kit.
+Saboteur-Shop-Prices:
+  - 50
+  - 30
+  - 50
+  - 20
+  - 100
+  - 40
+  - 40
+  - 300
+  - 20
+
+#These are the prices of the shop items for the detective
+#Regardless of which shop items are enabled, the first price is always the cost of Insight, and the second is the cost of a panic kit
+Detective-Shop-Prices:
+  - 60
+  - 20
+  - 100
+  - 40
+  - 40
+  - 300
+  - 20
+
+#These are the prices of the shop items for innocents
+#The first price is always the cost of a panic kit
+Innocent-Shop-Prices:
+  - 20
+  - 100
+  - 40
+  - 40
+  - 300
+  - 20
+
+#This is the number of ticks to wait between when the game ends and when the server sends players back to the lobby
+Restart-Delay: 50
+
+#This section contains most of the messages Sabotage sends to players
+Messages:
+  #This occurs when so many people have used a sab pass that it is impossible to keep the ratio of sabs to other players under Min-Pct-Sabs
+  Sabpass-Maximum-Sabs-Exceeded: "§cUnfortunately, too many players used a sab pass this round. You have been credited one sab passes."
+  #This occurs when there is a tie for which map to play on
+  Win-Vote-Tied: "§bThere was a tie for the map to play on! The randomly selected map is §2<MAP>"
+  #This occurs when the random map option wins the vote
+  Random-Win-Vote: "§aRandom map won the vote! The randomly selected map is §2<MAP>"
+  #This occurs when a map wins the vote
+  Win-Vote-Not-Tied: "§aThe map §2<MAP> §ahas won the vote!"
+  #This is the message broadcast when the detective finishes inspecting a body
+  Detective-Check-Body: "§9<DETECTIVE> §bfound §e<PLAYERNAME>§b to be a <ROLE>"
+  #This is the message sent to the detective after using insight on a player
+  Detective-Insight: "§bInsight revealed that player §e<PLAYERNAME> §bis a <ROLE>"
+  #This is the message displayed after a player is banned for running out of karma
+  Karma-Ban: "§cYour Karma has reached zero so you have been banned for one day."
+  #This is the list of messages displayed on [SI INFO] signs
+  Tester-Info-Sign:
+    - "§1Click here to find"
+    - "§1out more about"
+    - "§1the tester!"
+  #This is the list of messages displayed on the [SI TRIGGER] sign
+  Tester-Trigger-Sign:
+    - "§1Click here to"
+    - "§1Begin the test!"
+  #This is the list of messages sent to a player who clicks on a [SI INFO] sign
+  Tester-Info:
+    - "§a---------------§bSaboteur Inspector§a--------------"
+    - "§bThe &aSaboteur Inspector §bdiscovers your role!"
+    - "§cSaboteurs §bturn the wool §cred§b."
+    - "§aInnocents §bturn the wool §agreen§b."
+    - "§9Detectives§b turn the wool §9blue§b."
+    - "A §cSaboteur §bshop item can make them test §agreen§b."
+  #This is the list of messages sent to the detective at the start of the game
+  Detective-Role-Messages:
+    - "§bYou are the §9Detective§b!"
+    - "§bFind and kill the §cSaboteurs§b."
+  #This is the list of messages sent to the saboteurs at the start of the game
+  Saboteur-Role-Messages:
+    -  "§b§lYou are a §cSaboteur§b!"
+    -  "§bYour team members are §a<FELLOWSABS>§b."
+    -  "§bFind and kill the §aInnocents §band the §9Detective§b."
+  #This is the list of messages sent to the innocents at the start of the game
+  Innocent-Role-Messages:
+    - "§b§lYou are an §aInnocent §bthis game!"
+    - "§bFind and kill the §cSaboteurs§b."
+  #This is the list of messages sent when the detective types /shop
+  Detective-Shop-Description:
+    - "§a---------------------§bShop§a---------------------"
+    - "§a<NUM>) §bInsight §a(60 Karma)"
+    - "§a<NUM>) §bPanic Kit §a(20 Karma)"
+    - "§a<NUM>) §bChorus Fruit §a(100 Karma)"
+    - "§a<NUM>) §bSpeed II Potion §a(40 Karma)"
+    - "§a<NUM>) §bMap Tracker §a(40 Karma)"
+    - "§a<NUM>) §bNuke §a(150 Karma)"
+    - "§a<NUM>) §bPlayer Locator §a(20 Karma)"
+    - "§bType §a/shop <id number>§b to learn more about an item, or type §a/shop buy <id>§b to buy it!"
+  #This is the list of messages sent when the detective learns more about insight
+  Detective-Insight-Description:
+    - "--------------§bInsight §a(60 Karma)§b--------------"
+    - "§bInsight is a powerful tool allowing the §9Detective"
+    - "§bto instantly see the true role of any player."
+    - "§bHowever, the §9Detective §bmay only buy three insights per game."
+    - "§bInsight is used by right clicking on a player with your §9inspectors."
+    - "§bDo §a/shop <id number>§b to learn more about an item, or §a/shop buy <id number>§b to buy it!"
+  #This is the list of messages sent a player learns more about panic kits
+  Panic-Kit-Description:
+    - "§a----------§bPanic Kit §a(20 Karma)§a----------"
+    - "§bPanic kits are sets of five temporary leaf blocks"
+    - "§bused to get out of holes and other tight spaces."
+    - "§bDo §a/shop <id number>§b to learn more about an item, or §a/shop buy <id number>§b to buy!"
+  #This is the list of messages sent a player when learning more about Chorus Fruit
+  Chorus-Fruit-Description:
+    - "§a---------§bChorus Fruit §a(100 Karma)§a---------"
+    - "§bChorus Fruit gives you three Chorus Fruit"
+    - "§bIt is useful to randomly teleport away from danger"
+    - "§bDo §a/shop <id number>§b to learn more about an item, or §a/shop buy <id number>§b to buy!"
+  #This is the list of messages sent a player when learning more about the Speed II potion
+  Speed-Description:
+    - "§a---------§bSpeed II §a(40 Karma)§a---------"
+    - "§bGives you a speed II potion"
+    - "§bUseful when running away from danger!"
+    - "§bDo §a/shop <id number>§b to learn more about an item, or §a/shop buy <id number>§b to buy!"
+
+  #This is the list of messages sent a player when learning more about the map
+  Map-Description:
+    - "§a-----------§bMap Tracker §a(40 Karma)§a-----------"
+    - "§bGives you a special map"
+    - "§bThis map shows where players are"
+    - "§bDo §a/shop <id number>§b to learn more about an item, or §a/shop buy <id number>§b to buy!"
+  #This is the list of messages sent a player when learning more about a nuke
+  Nuke-Description:
+    - "§a-----------§bNuke §a(300 Karma)§a-----------"
+    - "§bThis gives you the power to trigger a Nuke!"
+    - "§bNukes will kill players but do not break blocks."
+    - "§bDo §a/shop <id number>§b to learn more about an item, or §a/shop buy <id number>§b to buy!"
+  #This is the list of messages sent a player when learning more a player locator
+  Player-Locator-Description:
+    - "§a-------§bPlayer Locator §a(100 Karma)§a-------"
+    - "§bThis gives you a compass which points to the nearest player"
+    - "§bThis is useful to find players who are hiding!"
+    - "§bDo §a/shop <id number>§b to learn more about an item, or §a/shop buy <id number>§b to buy!"
+  #This is the list of messages sent when a saboteur types /shop
+  Saboteur-Shop-Description:
+    - "§a---------------------§9Shop§a---------------------"
+    - "§a<NUM>) §bHack Revelation §a(50 Karma)"
+    - "§a<NUM>) §bSurprise Chest §a(30 Karma)"
+    - "§a<NUM>) §bMartyr §a(50 Karma)"
+    - "§a<NUM>) §bPanic Kit §a(20 Karma)"
+    - "§a<NUM>) §bChorus Fruit §a(100 Karma)"
+    - "§a<NUM>) §bSpeed II Potion §a(40 Karma)"
+    - "§a<NUM>) §bMap Tracker §a(40 Karma)"
+    - "§a<NUM>) §bNuke §a(150 Karma)"
+    - "§a<NUM>) §bPlayer Locator §a(100 Karma)"
+    - "§bDo §a/shop <id number>§b to learn more about an item, or §a/shop buy <id number>§b to buy!"
+  #This is the list of messages sent when a saboteur learns more about surprise chests
+  Saboteur-Surprise-Chest-Description:
+    - "§a--------------§9Surprise Chest (30 Karma)§a--------------"
+    - "§bThe surprise chest is a piece of §cTNT"
+    - "§bdisguised as a trapped chest. It explodes when opened."
+    - "§bDo §a/shop <id number>§b to learn more about an item, or §a/shop buy <id number>§b to buy!"
+  #This is the list of messages sent when a saboteur learns more about martyr
+  Saboteur-Martyr-Description:
+    - "§a--------------§9Martyr (50 Karma)§a--------------"
+    - "§bDrop a large bomb when you die, killing"
+    - "§bnearby players and providing additional karma."
+    - "§bDo §a/shop <id number>§b to learn more about an item, or §a/shop buy <id number>§b to buy!"
+  #This is the list of messages sent when the a saboteur learns more about hack revelation
+  Saboteur-Hack-Revelation-Description:
+    - "§a---------§9Hack Revelation (50 Karma)§a----------"
+    - "§bThis important shop item allows a §cSaboteur"
+    - "§bto test as an §bInnocent for one time"
+    - "§bDo §a/shop <id number>§b to learn more about an item, or §a/shop buy <id number>§b to buy!"
+  #This is the list of messages sent when an innocent types /shop
+  Innocent-Shop-Description:
+    - "§a---------------------§9Shop§a---------------------"
+    - "§a<NUM>) §bPanic Kit §a(20 Karma)"
+    - "§a<NUM>) §bChorus Fruit §a(100 Karma)"
+    - "§a<NUM>) §bSpeed II Potion §a(40 Karma)"
+    - "§a<NUM>) §bMap Tracker§a(40 Karma)"
+    - "§a<NUM>) §bNuke §7(150 Karma)"
+    - "§a<NUM>) §bPlayer Locator §7(100 Karma)"
+    - "§bDo §b/shop <id number>§b to learn more about an item, or §b/shop buy <id number>§b to buy!"
+  #This is the message sent when a player enters an invalid shop number
+  Shop-Bad-Number-Message: "§cThe shop number you entered is invalid. Do §b/shop <buy> <number>"
+  #These are the messages sent to players after they kill other players
+  Saboteur-Kills-Saboteur: "§b<PLAYERNAME> §bwas a §cSaboteur§b! You lost §c<KARMA> §bkarma!"
+  Saboteur-Kills-Innocent: "§b<PLAYERNAME> §bwas an §aInnocent§b! You gained §a<KARMA> §bkarma!"
+  Saboteur-Kills-Detective: "§b<PLAYERNAME> §bwas the §9Detective§b! You gained §a<KARMA> §bkarma!"
+  Innocent-Kills-Innocent: "§b<PLAYERNAME> §bwas an §aInnocent§b! You lost §c<KARMA> §bkarma!"
+  Innocent-Kills-Saboteur: "§b<PLAYERNAME> §bwas a §cSaboteur§b! You gained §a<KARMA> §bkarma!"
+  Innocent-Kills-Detective: "§b<PLAYERNAME> §bwas the §9Detective§b! You lost §c<KARMA> §bkarma!"
+  Detective-Kills-Saboteur: "§b<PLAYERNAME> §bwas a §cSaboteur§b! You gained §a<KARMA> §bkarma!"
+  Detective-Kills-Innocent: "§b<PLAYERNAME> §bwas an §aInnocent§b! You lost §c<KARMA> §bkarma!"
+  #These are the messages sent when the saboteurs win the game
+  Saboteurs-Win-Messages:
+    - "§bThe §cSaboteurs §bhave won the game!"
+    - "§bAll living §cSaboteurs §bhave received §a<KARMA> §bkarma!"
+    - "§bThe §cSaboteurs§b were §c<FELLOWSABS>§b!"
+  #These are the messages sent when the innocents win the game
+  Innocents-Win-Messages:
+    - "§bThe §aInnocents §bhave won the game!"
+    - "§bAll living §aInnocents§b have received §a<KARMA> §bkarma!"
+    - "§bThe §cSaboteurs§b were §c<FELLOWSABS>§b!"
+  #These are the messages sent the server reloads after the game of Sabotage
+  Restarting:
+    - "§bYou will be teleported back to the lobby for another game of Sabotage."
+
+  #This is the code used in some messages that is replaced by the number of players in a game
+  Player-Number-Code: "<PLAYERS>"
+  #This is the code that is replaced with a starting value
+  Start-Code: "<START>"
+  #This is the code used in some messages that is replaced by the name of the detective
+  Detective-Name: "<DETECTIVE>"
+  #This is the code used in some messages that is replaced by the name of a player
+  Effected-Player: "<PLAYERNAME>"
+  #This is the code used in some messages that is replaced by the name of a player's role
+  Player-Role: "<ROLE>"
+  #This is the code used in some messages that is replaced by the list of all saboteurs
+  All-Sabs-Code: "<FELLOWSABS>"
+  #This is the code used in some messages that is replaced by an amount of karma
+  Karma-Code: "<KARMA>"
+  #This is the code used in some messages that is replaced by the name of a map
+  Map-Code: "<MAP>"
+  #This is the code used in some messages that is replaced by a number
+  Number-Code: "<NUM>"
+
+#This is a list of how much karma a player gains or looses after killing another player
+#Karma losses should be negative
+Karma-Values:
+  Saboteur-Kills-Saboteur: -200
+  Saboteur-Kills-Innocent: 25
+  Saboteur-Kills-Detective: 40
+  Innocent-Kills-Innocent: -80
+  Innocent-Kills-Saboteur: 40
+  Innocent-Kills-Detective: -200
+  Detective-Kills-Saboteur: 40
+  Detective-Kills-Innocent: -80
+  Innocents-Win: 40
+  Saboteurs-Win: 40
+  #This is how much Karma a new player starts with, and how much karma a player receives after they are karma banned
+  Starting-Karma: 300
+
+Chat-Format:
+  # The chat format to use in the lobby
+  Lobby-Chat: "<PREFIX><NAME><SUFFIX> §c>§f <MESSAGE>"
+  # The chat format to use for living players during the game, excluding the detective
+  Game-Chat:  "<PREFIX><ROLE><NAME><SUFFIX> §c>§f <MESSAGE>"
+  # The chat format to use for the sab chat
+  Sab-Chat: "<PREFIX><ROLE><NAME><SUFFIX> §4>§f <MESSAGE>"
+  # The chat format to use for dead players
+  Dead-Chat: "<PREFIX><ROLE><NAME><SUFFIX> §8>§7 <MESSAGE>"
+  # The chat format to use for the detective while the detective is alive
+  Detective-Chat: "<PREFIX><ROLE><NAME><SUFFIX> §c>§f <MESSAGE>"
+  # The code for the player's prefix
+  Prefix-Code: "<PREFIX>"
+  # The code for the player's name
+  Name-Code: "<NAME>"
+  # The code for the player's message
+  Message-Code: "<MESSAGE>"
+  # The code for the player's suffix
+  Suffix-Code: "<SUFFIX>"
+
+# Sabotage supports executing server commands following certain events. All commands will be executed by the console.
+# Use the "Effected-Player" code to replace the username of the player who preformed the action.
+# Under the event, type the chance of the commands to be executed.
+# Then under the chance of execution type the commands.
+# Leave blank for no commands.
+Commands:
+  Saboteur-Kills-Saboteur:
+  Saboteur-Kills-Innocent:
+  Saboteur-Kills-Detective:
+  Innocent-Kills-Innocent:
+  Innocent-Kills-Saboteur:
+  Innocent-Kills-Detective:
+  Detective-Kills-Saboteur:
+  Detective-Kills-Innocent:
+
+# Setting this to true will disable the automatic internal Karma changes.
+# This allows you to customize rewards through the commands tab.
+# The command /addkarma <Effected-Player (code from above)> (amount) [-s] silently changes a player's karma.
+# Karma changes for the end of the game will still be done internally, even when this is set to false.
+Disable-Automatic-Karma-Changes: false
+
+# The amount of time, in seconds, players should be invincible for.
+Invincibility-Duration: "30"
+
+# The code to be replaced by the time remaining until the next chestwave.
+Chestwave-Code: "<CHESTWAVE>"
+
+# The time remaining in invincibility when the server should announce the amount of time remaining in invincibility
+Invincibility-Announcement-Times:
+  - 30
+  - 20
+  - 10
+  - 5
+
+# These lines make up the scoreboard for players who are in the lobby.
+# Player-Number-Code, as defined earlier, is replaced by the number of visible online players
+# Number-Code, as defined earlier, is replaced by the time remaining until the game begins.
+Countdown-Scoreboard:
+  - "§6§lSABOTAGE"
+  - " "
+  - "§bStatus: §aPre-Game"
+  - "§bTimer: §a<NUM>"
+  - ""
+  - "§bPlayers: §a<PLAYERS>"
+
+# These lines make up the scoreboard for players during invincibility
+# Player-Number-Code, as defined earlier, is replaced by the number of visible online players
+# Number-Code, as defined earlier, is replaced by the time remaining until roles are assigned
+Invincibility-Scoreboard:
+  - "§6§lSABOTAGE"
+  - " "
+  - "§bStatus: §aCollection"
+  - "§bTimer: §a<NUM>"
+  - ""
+  - "§bPlayers: §a<PLAYERS>"
+
+# These lines make up the scoreboard during the game
+# Player-Number-Code, as defined earlier, is replaced by the number of visible online players
+# Number-Code, as defined earlier, is replaced by the time remaining until the game ends
+# Player-Role, as defined earlier, is replaced by the appropriate role text defined later in this config
+# Chestwave-Code, as defined earlier, is replaced by the time remaining until the next chestwave
+In-Game-Scoreboard:
+  - "§6§lSABOTAGE"
+  - "  "
+  - "§bStatus: §aIn-game"
+  - " "
+  - "§bTimer: §a<NUM>"
+  - "§bChestwave: §a<CHESTWAVE>"
+  - ""
+  - "§bPlayers: §a<PLAYERS>/<START>"
+  - "§bRole: <ROLE>"
+
+Saboteur-Scoreboard-Role: "§cSaboteur"
+Saboteur-Nametag-Role: "§c"
+Innocent-Scoreboard-Role: "§aInnocent"
+Innocent-Nametag-Role: "§a"
+Detective-Scoreboard-Role: "§9Detective"
+Detective-Nametag-Role: "§9"
+Dead-Scoreboard-Role: "§7Dead"
+Dead-Nametag-Role: "§7"
+Mod-Scoreboard-Role: "§6Mod"
+Mod-Nametag-Role: "§6"
+Unknown-Nametag-Role: "§e"
+
+# The number of ticks the detective must wait when inspecting a body
+Inspector-Use-Cooldown: 20
+Use-Corpse-Reborn: true
