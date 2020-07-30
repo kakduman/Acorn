@@ -188,16 +188,20 @@ world-settings:
         COBBLESTONE: 500
         STONE: 500
         NETHERRACK: 500
+        BLACKSTONE: 500
+        BASALT: 500
     generator-settings:
       flat-bedrock: false
     baby-zombie-movement-modifier: 0.5
     viewdistances:
       no-tick-view-distance: 8
   world_nether:
-    alt-item-despawn-rate:
+    -item-despawn-rate:
       enabled: true
       items:
         NETHERRACK: 500
+        BLACKSTONE: 500
+        BASALT: 500
     anti-xray:
       enabled: true
       engine-mode: 1
