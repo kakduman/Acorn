@@ -65,8 +65,8 @@ world-settings:
         bypass-mob-griefing: true
         follow-emerald-blocks: false
         spawn-iron-golem:
-          radius: 0
-          limit: 0
+          radius: 32
+          limit: 4
       wandering_trader:
         can-be-leashed: false
         follow-emerald-blocks: false
