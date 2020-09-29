@@ -13,7 +13,7 @@ settings:
   shutdown-message: Server restarting. This should only take a minute!
 spawn-limits:
   water-ambient: 2
-  monsters: 12
+  monsters: 16
   animals: 4
   water-animals: 5
   ambient: 1
