@@ -1,0 +1,194 @@
+# To disable reward set value to []
+# or remove entirely
+# Eg:
+# FirstVote: [] (All in one line)
+# Rewards will be given if there is a reward to give
+# 
+# First vote rewards
+AllSites:
+  Commands: {}
+Cumulative:
+  '4':
+    Enabled: true
+    VotesInSameDay: true
+    VotesInSameWeek: false
+    Rewards:
+      Commands:
+        Console:
+        - crates givekey %player% common 1
+        - bcast &c%player%&6 voted 4 times today and received a bonus crate key! Vote
+          for yourself with &c/vote
+VoteParty:
+  Enabled: false
+  VotesRequired: 20
+  GiveAllPlayers: false
+  ResetEachDay: false
+  ResetMonthly: false
+  ResetExtraVotesMonthly: false
+  CountFakeVotes: true
+  UserVotesRequired: 0
+  Broadcast: '&cReached the vote party amount!'
+  Commands: []
+  Rewards:
+    Commands:
+    - say %player%
+    Items:
+      DIAMOND:
+        Material: DIAMOND
+        Amount: 1
+ResetMilestonesMonthly: false
+MileStones:
+  '4':
+    Enabled: true
+    Rewards:
+      Commands:
+        Console:
+        - minecraft:give %player% golden_shovel 1
+  '10':
+    Enabled: true
+    Rewards:
+      Commands:
+        Console:
+        - lp user %player% parent add husk
+        - dbc %player% voted 10 times and was promoted to &e&l[Husk]
+  '25':
+    Enabled: true
+    Rewards:
+      Commands:
+        Console:
+        - lp user %player% parent add drowned
+        - dbc %player% voted 25 times and was promoted to &3&l[Drowned]
+  '50':
+    Enabled: true
+    Rewards:
+      Commands:
+        Console:
+        - lp user %player% parent add skeleton
+        - dbc %player% voted 50 times and was promoted to &7&l[Skeleton]
+  '100':
+    Enabled: true
+    Rewards:
+      Commands:
+        Console:
+        - lp user %player% parent add stray
+        - dbc %player% voted 100 times and was promoted to &b&l[Stray]
+  '250':
+    Enabled: true
+    Rewards:
+      Commands:
+        Console:
+        - lp user %player% parent add spider
+        - dbc %player% voted 250 times and was promoted to &4&l[Spider]
+  '500':
+    Enabled: true
+    Rewards:
+      Commands:
+        Console:
+        - lp user %player% parent add creeper
+        - dbc %player% voted 500 times and was promoted to &a&l[Creeper]
+  '1000':
+    Enabled: true
+    Rewards:
+      Commands:
+        Console:
+        - lp user %player% parent add phantom
+        - dbc %player% voted 1000 times and was promoted to &9&l[Phantom]
+  '2000':
+    Enabled: true
+    Rewards:
+      Commands:
+        Console:
+        - lp user %player% parent add wither
+        - dbc %player% voted 2000 times and was promoted to &8&l[Wither]
+VoteStreak:
+  Day:
+    '5':
+      Enabled: true
+      Rewards:
+        Commands:
+          Console:
+          - crate givekey %player% rare 1
+          - dbc %player% voted 5 days in a row and was given a bonus rare crate key! Vote with &b/vote
+    '10':
+      Enabled: true
+      Rewards:
+        Commands:
+          Console:
+          - crate givekey %player% rare 1
+          - dbc %player% voted 5 days in a row and was given a bonus rare crate key! Vote with &b/vote
+    '15':
+      Enabled: true
+      Rewards:
+        Commands:
+          Console:
+          - crate givekey %player% rare 1
+          - dbc %player% voted 5 days in a row and was given a bonus rare crate key! Vote with &b/vote
+    '20':
+      Enabled: true
+      Rewards:
+        Commands:
+          Console:
+          - crate givekey %player% rare 1
+          - dbc %player% voted 5 days in a row and was given a bonus rare crate key! Vote with &b/vote
+    '25':
+      Enabled: true
+      Rewards:
+        Commands:
+          Console:
+          - crate givekey %player% rare 1
+          - dbc %player% voted 5 days in a row and was given a bonus rare crate key! Vote with &b/vote
+    '30':
+      Enabled: true
+      Rewards:
+        Commands:
+          Console:
+          - crate givekey %player% rare 1
+          - crate givekey %player% epic 1
+          - dbc %player% voted 30 days in a row and was given a bonus epic crate key! Vote with &b/vote
+  Week:
+    '2':
+      Enabled: false
+      Rewards:
+        Messages:
+          Player: '&aYou voted for %Streak% %Type%''s in a row!'
+  Month:
+    '2':
+      Enabled: false
+      Rewards:
+        Messages:
+          Player: '&aYou voted for %Streak% %Type%''s in a row!'
+  Requirement:
+    UsePercentage: false
+    Day: 50
+    Week: 50
+    Month: 50
+EnableMonthlyAwards: false
+MonthlyAwards:
+  '1':
+    Rewards:
+      Messages:
+        Player: '&aYou came in first place in %TopVoter%!'
+  '2':
+    Rewards:
+      Messages:
+        Player: '&aYou came in second place in %TopVoter%!'
+EnableWeeklyAwards: false
+WeeklyAwards:
+  '1':
+    Rewards:
+      Messages:
+        Player: '&aYou came in first place in %TopVoter%!'
+  '2':
+    Rewards:
+      Messages:
+        Player: '&aYou came in second place in %TopVoter%!'
+EnableDailyRewards: false
+DailyAwards:
+  '1':
+    Rewards:
+      Messages:
+        Player: '&aYou came in first place in %TopVoter%!'
+  '2':
+    Rewards:
+      Messages:
+        Player: '&aYou came in second place in %TopVoter%!'
