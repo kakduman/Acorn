@@ -104,7 +104,7 @@ world-settings:
     parrots-are-unaffected-by-player-movement: false
     container-update-tick-rate: 3
     prevent-tnt-from-moving-in-water: false
-    armor-stands-tick: true
+    armor-stands-tick: false
     allow-leashing-undead-horse: false
     spawner-nerfed-mobs-should-jump: false
     baby-zombie-movement-speed: 0.5
