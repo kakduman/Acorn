@@ -192,7 +192,7 @@ world-settings:
       flat-bedrock: false
     baby-zombie-movement-modifier: 0.5
     viewdistances:
-      no-tick-view-distance: 8
+      no-tick-view-distance: 9
   world_nether:
     alt-item-despawn-rate:
       enabled: true
