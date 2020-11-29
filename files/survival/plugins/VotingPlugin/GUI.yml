@@ -1,0 +1,400 @@
+# Configure GUI's here
+# Note: Slots start at 0 instead of 1, max slot is 53 (don't go over) (E.g: last slot in first row of inventory is 8)
+# Item Material's can be found here: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+#
+# GUI Methods:
+# - BOOK
+# - GUI
+# - CHAT (Disables GUI's)
+GUIMethod:
+  Today: CHAT
+  TopVoter: CHAT
+  Last: CHAT
+  Next: CHAT
+  Total: CHAT
+  URL: CHAT
+  Best: CHAT
+  Streak: CHAT
+  GUI: CHEST # CHAT not availabe for this
+  
+# Enable command for last month gui
+# Requires restart to take effect
+LastMonthGUI: false
+  
+CHEST:
+  # GUI for /vote gui, /vgui, /votegui
+  VoteGUI:
+    # Items will be orders as it is below
+    URL:
+      # Standard item format, lore is automaticly applied 
+      Item:
+        Material: 'BOW'
+        Data: 0
+        Amount: 1
+        Name: '&4URL'
+        Lore:
+        - '&aClick me for links'
+        # You can set skulls of the player using the following
+        # Remove the # to enable
+        #Skull: '%Player%'
+    Next:
+      Item:
+        Material: 'COMPASS'
+        Data: 0
+        Amount: 1
+        Name: '&4Next'
+    Last:
+      Item:
+        Material: 'CLOCK'
+        Data: 0
+        Amount: 1
+        Name: '&4Last'
+    Total:
+      Item:
+        Material: 'CHEST'
+        Data: 0
+        Amount: 1
+        Name: '&4Total'
+    Top:
+      Item:
+        Material: 'OAK_SIGN'
+        Data: 0
+        Amount: 1
+        Name: '&4Top'
+    Today:
+      Item:
+        Material: 'BOOK'
+        Data: 0
+        Amount: 1
+        Name: '&4Today'
+    Shop:
+      Item:
+        Material: 'DIAMOND'
+        Data: 0
+        Amount: 1
+        Name: '&4Vote Shop'
+        Lore:
+        - '&aYou currently have %points% points'
+        
+  # GUI for /vote url, /vote
+  VoteURL:
+    # GUI Name
+    Name: '&cVoteURL'
+    BackButton: true
+    SiteName: '&c%Name%'
+    SeeURL: '&cClick to see URL'
+    NextVote: '&cCan Vote In: %Info%'
+    ViewAllUrlsButtonEnabled: true
+    AllUrlsButton:
+      RequireAllSitesVoted: true
+      AlreadyVotedItem:
+        Material: 'REDSTONE_BLOCK'
+        Data: 0 
+        Amount: 1
+        Name: '&4All Voting Sites'
+        Lore:
+        - '&cClick Me'
+      CanVoteItem:
+        Material: 'EMERALD_BLOCK'
+        Data: 0
+        Amount: 1
+        Name: '&4All Voting Sites'
+        Lore:
+        - '&cClick Me'
+    AlreadyVotedItem:
+      Material: 'REDSTONE_BLOCK'
+      Data: 0 
+      Amount: 1
+    CanVoteItem:
+      Material: 'EMERALD_BLOCK'
+      Data: 0
+      Amount: 1
+    URLText: '%VoteUrl%'
+    
+  VoteLast:
+    Name: 'VoteLast: %player%'
+    BackButton: true
+  VoteNext:
+    Name: 'VoteNext: %player%'
+    BackButton: true
+  VoteToday:
+    Name: 'VoteToday'
+    Line: '&6%VoteSite% : %Time%'
+    IconTitle: '%player%'
+    BackButton: true
+    UseSkull: true
+    # If UseSkull is false, use this item
+    PlayerItem:
+      Material: 'PAPER'
+      Amount: 1
+  VoteTop:
+    Name: 'VoteTop %topvoter%'
+    BackButton: false
+    Item:
+      Name: '&3&l%position%: &3%player%'
+      Lore: '&3&lVotes: &3%votes%'
+    SwitchItem:
+      Name: '&3Switch TopVoter'
+      Lore: '&bCurrently: %Top%'
+      Material: 'OAK_SIGN'
+      Amount: 1
+      # 8 Slots over from the bottom left
+      Slot: 7
+    # Number of topvoters to display on page +9
+    # 9 Slots on the botton are used for page buttons
+    Size: 27
+    # If true, /vote top will show player heads
+    UseSkull: true
+    # Item for player in GUI if use skull is false
+    PlayerItem:
+      Material: 'PAPER'
+  VoteTotal:
+    Name: 'VoteTotal: %player%'
+    BackButton: true
+    DayTotal:
+      Item:
+        Material: 'CLOCK'
+        Name: '&cDaily Total'
+        Lore: '&c&lTotal: &c%Total%'
+        Amount: 1
+    WeekTotal:
+      Item:
+        Material: 'CLOCK'
+        Name: '&cWeekly Total'
+        Lore: '&c&lTotal: &c%Total%'
+        Amount: 1
+    MonthTotal:
+      Item:
+        Material: 'CLOCK'
+        Name: '&cMonthly Total'
+        Lore: '&c&lTotal: &c%Total%'
+        Amount: 1
+    AllTimeTotal:
+      Item:
+        Material: 'CLOCK'
+        Name: '&cAllTime Total'
+        Lore: '&c&lTotal: &c%Total%'
+        Amount: 1
+  VoteBest:
+    Name: 'VoteBest: %player%'
+    DayBest:
+      Item:
+        Material: 'CLOCK'
+        Name: '&cDaily Best'
+        Lore: '&c&lBest: &c%Best%'
+        Amount: 1
+    WeekBest:
+      Item:
+        Material: 'CLOCK'
+        Name: '&cWeekly Best'
+        Lore: '&c&lBest: &c%Best%'
+        Amount: 1
+    MonthBest:
+      Item:
+        Material: 'CLOCK'
+        Name: '&cMonthly Best'
+        Lore: '&c&lBest: &c%Best%'
+        Amount: 1
+  VoteStreak:
+    Name: 'VoteStreak: %player%'
+    BackButton: false
+    CurrentDayStreak:
+      Item:
+        Material: 'CLOCK'
+        Name: '&cCurrent Daily Streak'
+        Lore: '&c&lStreak: &c%Streak%'
+        Amount: 1
+    CurrentWeekStreak:
+      Item:
+        Material: 'CLOCK'
+        Name: '&cCurrent Weekly Streak'
+        Lore: '&c&lStreak: &c%Streak%'
+        Amount: 1
+    CurrentMonthStreak:
+      Item:
+        Material: 'CLOCK'
+        Name: '&cCurrent Monthly Streak'
+        Lore: '&c&lStreak: &c%Streak%'
+        Amount: 1
+    HighestDayStreak:
+      Item:
+        Material: 'CLOCK'
+        Name: '&cHighest Daily Streak'
+        Lore: '&c&lStreak: &c%Streak%'
+        Amount: 1
+    HighestWeekStreak:
+      Item:
+        Material: 'CLOCK'
+        Name: '&cHighest Weekly Streak'
+        Lore: '&c&lStreak: &c%Streak%'
+        Amount: 1
+    HighestMonthStreak:
+      Item:
+        Material: 'CLOCK'
+        Name: '&cHighest Monthly Streak'
+        Lore: '&c&lStreak: &c%Streak%'
+        Amount: 1
+  VoteURLSite:
+    Name: 'VoteSite: %site%'
+  VoteGUIName: '&cVoteGUI: &c&l%player%'
+  VoteRewardName: 'VoteReward'
+  VoteShopName: 'VoteShop'
+  
+  BackButton:
+    Material: 'BARRIER'
+    Data: 0
+    Amount: 1
+    Name: '&8Back to VoteGUI'
+
+  VoteShopBackButton: true
+  VoteShopEnabled: true
+  # Hide items in vote shop which user can not buy
+  VoteShopHideLimitedReached: true
+  # Requires above to be false
+  VoteShopLimitReached: '&aYou reached your limit'
+  VoteShopRequireConfirmation: true
+  VoteShopDisabled: '&cVote shop disabled'
+  Shop:
+    # Identifier
+    # Used in placeholders for formats
+    Fly:
+      Material: 'ELYTRA'
+      Data: 0
+      Amount: 1
+      Name: '&aOne Month /fly'
+      Lore:
+      - '&c&lCost: &c100 Vote Points'
+      Cost: 100
+      Permission: 'votingplugin.hasntbought.fly'
+      Rewards:
+        Messages:
+         Player: '&6If you wish to refund your voteshop purchase, please let us know on the discord within 24 hours.' 
+        Commands:
+          Console:
+          - 'lp user %player% parent addtemp fly 1mo accumulate'
+      Slot: 0
+    Unlimited homes:
+      Material: 'RED_BED'
+      Data: 0
+      Amount: 1
+      Name: '&aUnlimited Homes'
+      Lore:
+      - '&c&lCost: &c250 Vote Points'
+      Cost: 250
+      Permission: 'votingplugin.hasntbought.unlimitedhomes'
+      Rewards:
+        Messages:
+          Player: '&6If you wish to refund your voteshop purchase, please let us know on the discord within 24 hours.' 
+        Commands:
+          Console:
+          - 'lp user %player% parent add unlimitedhomes'
+      Slot: 1
+    KeepInv:
+      Material: 'CHEST'
+      Data: 0
+      Amount: 1
+      Name: '&aKeep Inventory'
+      Lore:
+      - '&c&lCost: &c250 Vote points'
+      Cost: 250
+      Permission: 'votingplugin.hasntbought.keepinv'
+      Rewards:
+        Messages:
+          Player: '&6If you wish to refund your voteshop purchase, please let us know on the discord within 24 hours.' 
+        Commands:
+          Console:
+          - 'lp user %player% parent add keepinv'
+      Slot: 2
+    Speed:
+      Material: 'SUGAR'
+      Data: 0
+      Amount: 1
+      Name: '&a/speed'
+      Lore:
+      - '&c&lCost: &c250 Vote Points'
+      Cost: 250
+      Permission: 'votingplugin.hasntbought.speed'
+      Rewards:
+        Messages:
+          Player: '&6If you wish to refund your voteshop purchase, please let us know on the discord within 24 hours.' 
+        Commands:
+          Console:
+          - 'lp user %player% parent add speed'
+      Slot: 3
+    Back:
+      Material: 'CHORUS_FRUIT'
+      Data: 0
+      Amount: 1
+      Name: '&a/back'
+      Lore:
+      - '&c&lCost: &c250 Vote Points'
+      Cost: 250
+      Permission: 'votingplugin.hasntbought.back'
+      Rewards:
+        Messages:
+          Player: '&6If you wish to refund your voteshop purchase, please let us know on the discord within 24 hours.' 
+        Commands:
+          Console:
+          - 'lp user %player% parent add back'
+      Slot: 4
+    KeepExp:
+      Material: 'EXPERIENCE_BOTTLE'
+      Data: 0
+      Amount: 1
+      Name: '&aKeep Exp'
+      Lore:
+      - '&c&lCost: &c100 Vote Points'
+      Cost: 100
+      Permission: 'votingplugin.hasntbought.exp'
+      Rewards:
+        Messages:
+          Player: '&6If you wish to refund your voteshop purchase, please let us know on the discord within 24 hours.' 
+        Commands:
+          Console:
+          - 'lp user %player% parent add exp'
+      Slot: 5
+    Backpack:
+      Material: 'SHULKER_BOX'
+      Data: 0
+      Amount: 1
+      Name: '&a/backpack'
+      # You can set skulls of the player using the following
+      # Remove the # to enable
+      #Skull: '%Player%'
+      Lore:
+      - '&c&lCost: &c250 Vote Points'
+      # Number of Vote Points this cost
+      Cost: 250
+      Permission: 'votingplugin.hasntbought.backpack'
+      Rewards:
+        Messages:
+          Player: '&6If you wish to refund your voteshop purchase, please let us know on the discord within 24 hours.' 
+        Commands:
+          Console:
+          - 'lp user %player% parent add backpack'
+      Slot: 6
+    Claim Blocks:
+      Material: 'GOLDEN_SHOVEL'
+      Data: 0
+      Amount: 1
+      Name: '&a1000 Claim Blocks'
+      Lore:
+      - '&c&lCost: &c50 Vote Points'
+      Cost: 50
+      Rewards:
+        Commands:
+          Console:
+          - 'acb %player% 1000'
+      Slot: 7 
+            
+BOOK:
+  VoteURLBookGUI:
+    Title: '&cVoteURL'
+    SiteName: '&c%name%'
+    CanVoteText: 'Click me'
+    CanVoteColor: 'GREEN'
+    AlreadyVotedText: 'Click me'
+    AlreadyVotedColor: 'RED' 
+    Layout:
+    - '&c%Sitename%'
+    - '[UrlText]'
