@@ -1,0 +1,22 @@
+playerSets:
+  all_players: all
+  hub: ${player server} == "hub"
+  survival: ${player server} == "survival"
+  sabotage: ${player server} == "sabotage"
+  creative: ${player server} == "creative"
+
+type: DYNAMIC_SIZE
+
+showTo: ${viewer server} = "survival"
+priority: 11
+
+# Hidden players show up on the tab list, avoids glitches
+hiddenPlayers: VISIBLE
+
+showHeaderFooter: false
+
+type: DYNAMIC_SIZE
+
+playerSet: all_players
+playerOrder: "vault_primary_group_weight desc, name asc"
+playerComponent: "${player bungeecord_display_name}"
