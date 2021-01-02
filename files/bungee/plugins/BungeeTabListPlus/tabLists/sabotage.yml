@@ -1,0 +1,47 @@
+playerSets:
+  all_players: all
+  hub: ${player server} == "hub"
+  survival: ${player server} == "survival"
+  sabotage: ${player server} == "sabotage"
+  creative: ${player server} == "creative"
+
+type: DYNAMIC_SIZE
+
+showTo: ${viewer server} = "sabotage"
+priority: 11
+
+# Hidden players show up on the tab list, avoids glitches
+hiddenPlayers: VISIBLE
+
+showHeaderFooter: false
+
+playerSet: sabotage
+playerOrder: "gamemode asc, name asc"
+playerComponent: "${dead}"
+
+customPlaceholders:
+  dead:
+    !conditional
+    condition: ${player gamemode} == "1"
+    true: "${player luckpermsbungee_prefix}&7${player name}"
+    false: ${detective}
+  detective:
+    !conditional
+    condition: ${player team} == "dForDetective"
+    true: "${player luckpermsbungee_prefix}&9${player name}"
+    false: ${sab-innocent}
+  sab-innocent:
+    !conditional
+    condition: ${player team} == "uForInnos" and ${viewer team} == "sabsForSabs"
+    true: "${player luckpermsbungee_prefix}&a${player name}"
+    false: ${sab-saboteur}
+  sab-saboteur:
+    !conditional
+    condition: ${player team} == "sabsForSabs" and ${viewer team} == "sabsForSabs"
+    true: "${player luckpermsbungee_prefix}&c${player name}"
+    false: ${inno-innocent}
+  inno-innocent:
+    !conditional
+    condition: ${viewer team} == "uForInnos" or ${viewer team} == "dForDetective"
+    true: "${player luckpermsbungee_prefix}&e${player name}"
+    false: ${player display_name}
