@@ -6,13 +6,14 @@
 # join us in our Discord or IRC channel.
 # 
 # Discord: https://discord.gg/papermc
-# IRC: #paper @ irc.spi.gt ( http://irc.spi.gt/iris/?channels=paper )
+# IRC: #paper @ irc.esper.net ( https://webchat.esper.net/?channels=paper ) 
 # Website: https://papermc.io/ 
 # Docs: https://paper.readthedocs.org/ 
 
 verbose: false
 config-version: 20
 settings:
+  fix-entity-position-desync: true
   track-plugin-scoreboards: false
   max-joins-per-tick: 3
   player-auto-save-rate: -1
@@ -37,6 +38,8 @@ settings:
     early-warning-every: 50000
     early-warning-delay: 100000
   spam-limiter:
+    recipe-spam-increment: 1
+    recipe-spam-limit: 20
     tab-spam-increment: 1
     tab-spam-limit: 500
   book-size:
@@ -75,11 +78,16 @@ timings:
   - settings.seed.dungeon
   - settings.seed.end-spike
   - worldgen.seeds.populator
+  - settings.velocity-support.secret
+  - server-ip
   history-interval: 60
   history-length: 720
   server-name: play.acornmc.org
 world-settings:
   default:
+    piglins-guard-chests: true
+    projectile-load-save-per-chunk-limit: 8
+    should-remove-dragon: false
     zombies-target-turtle-eggs: true
     delay-chunk-unloads-by: 10s
     phantoms-do-not-spawn-on-creative-players: true
@@ -109,7 +117,7 @@ world-settings:
     disable-creeper-lingering-effect: false
     fire-physics-event-for-redstone: false
     use-vanilla-world-scoreboard-name-coloring: false
-    enable-treasure-maps: true
+    enable-treasure-maps: false
     treasure-maps-return-already-discovered: false
     experience-merge-max-value: -1
     prevent-moving-into-unloaded-chunks: true
@@ -119,7 +127,7 @@ world-settings:
     skeleton-horse-thunder-spawn-chance: 0.01
     disable-ice-and-snow: false
     keep-spawn-loaded: true
-    armor-stands-do-collision-entity-lookups: true
+    armor-stands-do-collision-entity-lookups: false
     mob-spawner-tick-rate: 2
     all-chunks-are-slime-chunks: false
     non-player-arrow-despawn-rate: 60
@@ -158,6 +166,8 @@ world-settings:
       cooldown-when-full: true
       disable-move-event: true
     game-mechanics:
+      disable-mob-spawner-spawn-egg-transformation: false
+      fix-curing-zombie-villager-discount-exploit: true
       nerf-pigmen-from-nether-portals: false
       disable-pillager-patrols: false
       disable-relative-projectile-velocity: false
@@ -179,6 +189,9 @@ world-settings:
     max-growth-height:
       cactus: 3
       reeds: 3
+      bamboo:
+        max: 16
+        min: 11
     fishing-time-range:
       MinimumTicks: 100
       MaximumTicks: 600
@@ -188,7 +201,8 @@ world-settings:
     squid-spawn-height:
       maximum: 0.0
     anti-xray:
-      lava-obscures: false
+      use-permission: false
+      lava-obscures: true
       enabled: true
       engine-mode: 2
       chunk-edge-mode: 2
@@ -229,6 +243,16 @@ world-settings:
       spawn-chance-failure-increment: 25
       spawn-chance-min: 25
       spawn-chance-max: 75
+    fix-climbing-bypassing-cramming-rule: true
+    mobs-can-always-pick-up-loot:
+      zombies: false
+      skeletons: false
+    door-breaking-difficulty:
+      zombie:
+      - HARD
+      vindicator:
+      - NORMAL
+      - HARD
   world_nether:
     alt-item-despawn-rate:
       enabled: true
@@ -238,6 +262,7 @@ world-settings:
         BASALT: 500
     anti-xray:
       enabled: true
+      lava-obscures: true
       engine-mode: 1
       chunk-edge-mode: 2
       max-chunk-section-index: 7
