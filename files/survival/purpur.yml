@@ -54,6 +54,7 @@ world-settings:
   default:
     mobs:
       phantom:
+        allow-griefing: false
         flames-on-swoop: false
         ridable: false
         ridable-in-water: false
@@ -143,6 +144,7 @@ world-settings:
         attributes:
           max_health: 3.0
       snow_golem:
+        takes-damage-from-water: true
         bypass-mob-griefing: false
         min-shoot-interval-ticks: 20
         max-shoot-interval-ticks: 20
@@ -156,6 +158,7 @@ world-settings:
         attributes:
           max_health: 4.0
       villager:
+        breeding-delay-ticks: 6000
         clerics-farm-warts: false
         cleric-wart-farmers-throw-warts-at-villagers: true
         can-breed: true
@@ -173,7 +176,7 @@ world-settings:
           max_health: 20.0
         lobotomize:
           check-interval: 60
-          enabled: true
+          enabled: false
       wandering_trader:
         spawn-minute-ticks: 1200
         spawn-day-ticks: 24000
@@ -285,6 +288,7 @@ world-settings:
           spawn_reinforcements: 0.1
           max_health: 20.0
       ender_dragon:
+        can-ride-vehicles: false
         bypass-mob-griefing: false
         ridable: false
         ridable-in-water: false
@@ -294,6 +298,7 @@ world-settings:
         attributes:
           max_health: 200.0
       enderman:
+        takes-damage-from-water: true
         bypass-mob-griefing: false
         can-despawn-with-held-block: false
         ridable: false
@@ -479,6 +484,7 @@ world-settings:
         attributes:
           max_health: 20.0
       strider:
+        takes-damage-from-water: true
         give-saddle-back: false
         breeding-delay-ticks: 6000
         ridable: false
@@ -541,6 +547,7 @@ world-settings:
         attributes:
           max_health: 10.0
       blaze:
+        takes-damage-from-water: true
         ridable: false
         ridable-in-water: false
         ridable-max-y: 256.0
@@ -555,6 +562,7 @@ world-settings:
         attributes:
           max_health: 80.0
       ghast:
+        allow-griefing: true
         ridable: false
         ridable-in-water: false
         ridable-max-y: 256.0
@@ -610,6 +618,7 @@ world-settings:
         attributes:
           max_health: 14.0
       wither:
+        can-ride-vehicles: false
         bypass-mob-griefing: false
         ridable: false
         ridable-in-water: false
@@ -619,6 +628,7 @@ world-settings:
         attributes:
           max_health: 300.0
     gameplay-mechanics:
+      always-tame-in-creative: false
       fireballs-bypass-mob-griefing: false
       note-block-ignore-above: false
       impose-teleport-restrictions-on-gateways: false
@@ -643,6 +653,9 @@ world-settings:
           firework: 0
           trident: 0
       armorstand:
+        can-movement-tick: true
+        can-move-in-water: true
+        can-move-in-water-over-fence: true
         set-name-visible-when-placing-with-custom-name: false
         fix-nametags: false
         step-height: 0.0
@@ -658,9 +671,11 @@ world-settings:
           stone: 0.5
       item:
         immune:
+          cactus: []
           explosion: []
           fire: []
       player:
+        fix-stuck-in-portal: false
         teleport-if-outside-border: true
         totem-of-undying-works-in-inventory: false
         spawn-invulnerable-ticks: 60
@@ -717,6 +732,7 @@ world-settings:
         daytime: 12000
         nighttime: 12000
       infinity-bow:
+        works-without-arrows: false
         normal-arrows: true
         spectral-arrows: false
         tipped-arrows: false
@@ -778,6 +794,17 @@ world-settings:
         max-growth-age: 25
       chest:
         open-with-solid-block-on-top: false
+      end-crystal:
+        baseless:
+          explode: true
+          explosion-power: 6.0
+          explosion-fire: false
+          explosion-effect: DESTROY
+        base:
+          explode: true
+          explosion-power: 6.0
+          explosion-fire: false
+          explosion-effect: DESTROY
     game-mechanics:
       entities-can-use-portals: true
     ridable-settings:
