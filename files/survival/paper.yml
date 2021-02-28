@@ -68,6 +68,7 @@ messages:
     flying-player: Kicked for flying.
     flying-vehicle: Kicked for flying with a vehicle.
 timings:
+  really-enabled: false
   enabled: true
   verbose: true
   server-name-privacy: false
@@ -85,6 +86,12 @@ timings:
   server-name: play.acornmc.org
 world-settings:
   default:
+    ender-dragons-death-always-places-dragon-egg: false
+    update-pathfinding-on-block-update: true
+    only-players-collide: false
+    allow-vehicle-collisions: true
+    max-leash-distance: 10.0
+    portal-search-vanilla-dimension-scaling: true
     piglins-guard-chests: true
     projectile-load-save-per-chunk-limit: 8
     should-remove-dragon: false
@@ -253,6 +260,11 @@ world-settings:
       vindicator:
       - NORMAL
       - HARD
+    entity-per-chunk-save-limit:
+      experience_orb: -1
+      snowball: -1
+      ender_pearl: -1
+      arrow: -1
   world_nether:
     alt-item-despawn-rate:
       enabled: true
