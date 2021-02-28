@@ -1,0 +1,24 @@
+#  Airplane Configuration
+#  Please see https://airplane.gg/config for help.
+[info]
+  version = "1.0"
+
+# Optimizes how entities act when
+# they're far away from the player
+[activation-range]
+  # This value defines how often in ticks, the furthest entity
+  # will get their pathfinders and behaviors ticked. 20 = 1s
+  max-tick-freq = 20
+  # This value defines how much distance modifies an entity's
+  # tick frequency. freq = (distanceToPlayer^2) / (2^value)
+  # If you want further away entities to tick less often, use 8.
+  # If you want further away entities to tick more often, try 10.
+  activation-dist-mod = 9
+
+# A list of entities to use the dynamic activation range
+# to modify how often their behaviors are ticked
+[behavior-activation]
+  villager = true
+  piglin = true
+  hoglin = true
+
