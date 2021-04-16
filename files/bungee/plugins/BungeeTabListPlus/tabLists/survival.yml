@@ -31,6 +31,14 @@ headerAnimationUpdateInterval: 0.1
 
 type: DYNAMIC_SIZE
 
+customPlaceholders:
+  afk_tag:
+    !conditional
+    parameters: 1
+    condition: ${%0 essentials_afk}
+    true: ' &7&lAFK'
+    false: ''
+
 playerSet: all_players
 playerOrder: "vault_primary_group_weight desc, name asc"
-playerComponent: "${player bungeecord_display_name}"
+playerComponent: "${player bungeecord_display_name} ${afk_tag player}"
