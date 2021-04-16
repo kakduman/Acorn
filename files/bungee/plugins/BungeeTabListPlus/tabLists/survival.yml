@@ -41,4 +41,4 @@ customPlaceholders:
 
 playerSet: all_players
 playerOrder: "vault_primary_group_weight desc, name asc"
-playerComponent: "${player bungeecord_display_name} ${afk_tag player}"
+playerComponent: "${player bungeecord_display_name}${afk_tag player}"
