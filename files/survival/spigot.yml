@@ -16,7 +16,7 @@ settings:
   sample-count: 12
   save-user-cache-on-stop-only: true
   late-bind: false
-  bungeecord: true
+  bungeecord: false
   sample-counht: 12
   player-shuffle: 0
   user-cache-size: 500000
