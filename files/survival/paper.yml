@@ -10,9 +10,13 @@
 # Website: https://papermc.io/ 
 # Docs: https://paper.readthedocs.org/ 
 
+use-display-name-in-quit-message: false
 verbose: false
-config-version: 20
+config-version: 22
 settings:
+  lag-compensate-block-breaking: true
+  send-full-pos-for-hard-colliding-entities: true
+  log-named-entity-deaths: true
   fix-entity-position-desync: true
   track-plugin-scoreboards: false
   max-joins-per-tick: 3
