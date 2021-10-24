@@ -4,7 +4,7 @@ use-new-light-engine: true
 pistons-can-push-tile-entities: false
 lag-compensate-block-breaking: true
 target-chunk-sends-per-player-per-second: 70.0
-delay-chunkunloads-by: 1
+delay-chunkunloads-by: 5
 config-version-please-do-not-modify-me: 2
 world-settings:
   default:
