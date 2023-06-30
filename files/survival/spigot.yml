@@ -3,30 +3,26 @@
 # with caution, and make sure you know what each option does before configuring.
 # For a reference for any variable inside this file, check out the Spigot wiki at
 # http://www.spigotmc.org/wiki/spigot-configuration/
-# 
+#
 # If you need help with the configuration or have any questions related to Spigot,
-# join us at the IRC or drop by our forums and leave a post.
-# 
-# IRC: #spigot @ irc.spi.gt ( http://www.spigotmc.org/pages/irc/ )
+# join us at the Discord or drop by our forums and leave a post.
+#
+# Discord: https://www.spigotmc.org/go/discord
 # Forums: http://www.spigotmc.org/
 
-config-version: 12
 settings:
-  log-villager-deaths: true
+  debug: false
   sample-count: 12
-  save-user-cache-on-stop-only: true
-  late-bind: false
-  bungeecord: false
-  sample-counht: 12
-  player-shuffle: 0
-  user-cache-size: 500000
-  moved-wrongly-threshold: 50.1925
-  moved-too-quickly-multiplier: 50.0
-  timeout-time: 550
+  timeout-time: 60
   restart-on-crash: true
   restart-script: ./start.sh
+  bungeecord: false
+  player-shuffle: 0
+  user-cache-size: 1000
+  save-user-cache-on-stop-only: false
+  moved-wrongly-threshold: 0.0625
+  moved-too-quickly-multiplier: 1000.0
   netty-threads: 4
-  debug: false
   attribute:
     maxHealth:
       max: 2048.0
@@ -34,58 +30,64 @@ settings:
       max: 2048.0
     attackDamage:
       max: 2048.0
+  log-villager-deaths: true
+  log-named-deaths: true
 messages:
-  whitelist: The server is under maintenance. Check the discord at discord.gg/CRBQKYA
-    for more information.
-  unknown-command: Unknown command. Type "/warp help" for help.
-  server-full: The server is full! Try again later.
+  whitelist: You are not whitelisted on this server!
+  unknown-command: Unknown command. Type "/help" for help.
+  server-full: The server is full!
   outdated-client: Outdated client! Please use {0}
   outdated-server: Outdated server! I'm still on {0}
-  restart: Server is restarting. This should only take a minute!
+  restart: Server is restarting
+advancements:
+  disable-saving: false
+  disabled:
+  - minecraft:story/disabled
 commands:
-  log: true
-  tab-complete: 0
-  send-namespaced: true
   spam-exclusions:
-  - /co
+  - /skill
   silent-commandblock-console: false
   replace-commands:
   - setblock
   - summon
   - testforblock
   - tellraw
-advancements:
+  log: true
+  tab-complete: 0
+  send-namespaced: true
+players:
   disable-saving: false
-  disabled:
-  - minecraft:story/disabled
+config-version: 12
 stats:
   disable-saving: false
   forced-stats: {}
 world-settings:
   default:
-    end-portal-sound-radius: 0
-    trident-despawn-rate: 18000
-    view-distance: default
-    max-entity-collisions: 1
-    verbose: true
-    mob-spawn-range: 2
-    hopper-amount: 1
-    dragon-death-sound-radius: 0
-    max-tnt-per-tick: 10
-    wither-spawn-sound-radius: 0
-    enable-zombie-pigmen-portal-spawns: true
-    item-despawn-rate: 6000
-    arrow-despawn-rate: 300
-    hanging-tick-frequency: 100
-    zombie-aggressive-towards-villager: false
-    nerf-spawner-mobs: true
+    seed-trailruins: 83469867
+    seed-ancientcity: 20083232
+    seed-buriedtreasure: 10387320
+    seed-mineshaft: default
+    hopper-can-load-chunks: false
+    below-zero-generation-in-existing-chunks: true
     merge-radius:
-      exp: 6.0
       item: 4.0
+      exp: 6.0
+    item-despawn-rate: 6000
+    view-distance: default
+    simulation-distance: default
+    thunder-chance: 100000
+    enable-zombie-pigmen-portal-spawns: true
+    wither-spawn-sound-radius: 0
+    hanging-tick-frequency: 100
+    arrow-despawn-rate: 500
+    trident-despawn-rate: 1200
+    zombie-aggressive-towards-villager: true
+    nerf-spawner-mobs: false
+    mob-spawn-range: 8
+    end-portal-sound-radius: 0
     growth:
-      bamboo-modifier: 100
-      sweetberry-modifier: 100
-      kelp-modifier: 100
+      torchflower-modifier: 100
+      pitcherplant-modifier: 100
       cactus-modifier: 100
       cane-modifier: 100
       melon-modifier: 100
@@ -99,18 +101,21 @@ world-settings:
       netherwart-modifier: 100
       vine-modifier: 100
       cocoa-modifier: 100
+      bamboo-modifier: 100
+      sweetberry-modifier: 100
+      kelp-modifier: 100
+      twistingvines-modifier: 100
+      weepingvines-modifier: 100
+      cavevines-modifier: 100
+      glowberry-modifier: 100
     entity-activation-range:
+      animals: 8
+      monsters: 32
+      raiders: 48
+      misc: 12
+      water: 16
       villagers: 16
       flying-monsters: 16
-      villagers-work-immunity-after: 100
-      villagers-work-immunity-for: 10
-      villagers-active-for-panic: true
-      animals: 6
-      monsters: 12
-      raiders: 16
-      misc: 4
-      water: 4
-      tick-inactive-villagers: false
       wake-up-inactive:
         animals-max-per-tick: 2
         animals-every: 1200
@@ -123,8 +128,14 @@ world-settings:
         villagers-for: 20
         flying-monsters-max-per-tick: 1
         flying-monsters-every: 200
-        flying-monsters-for: 20
+        flying-monsters-for: 60
+      villagers-work-immunity-after: 100
+      villagers-work-immunity-for: 20
+      villagers-active-for-panic: true
+      tick-inactive-villagers: true
+      ignore-spectators: false
     entity-tracking-range:
+      display: 128
       players: 48
       animals: 48
       monsters: 48
@@ -132,7 +143,11 @@ world-settings:
       other: 64
     ticks-per:
       hopper-transfer: 8
-      hopper-check: 4
+      hopper-check: 1
+    hopper-amount: 1
+    dragon-death-sound-radius: 0
+# ...
+    seed-stronghold: default
     hunger:
       jump-walk-exhaustion: 0.05
       jump-sprint-exhaustion: 0.2
@@ -141,12 +156,10 @@ world-settings:
       swim-multiplier: 0.01
       sprint-multiplier: 0.1
       other-multiplier: 0.0
+    max-tnt-per-tick: 100
     max-tick-time:
-      tile: 1000
-      entity: 1000
-    squid-spawn-range:
-      min: 45.0
+      tile: 50
+      entity: 50
+    verbose: false
   worldeditregentempworld:
     verbose: false
-players:
-  disable-saving: false
